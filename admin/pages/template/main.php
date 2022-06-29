@@ -25,6 +25,8 @@
   <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
   <!-- summernote -->
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -93,12 +95,33 @@
           </li>
 
           <li class="nav-item">
-            <a href="index.php?page=user" class="nav-link">
+            <a href="#" class="nav-link">
               <i class="nav-icon fa fa-user"></i>
               <p>
-                User Management
+              User Management
+                <i class="fas fa-angle-left right"></i>
               </p>
             </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="index.php?page=user" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>User</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=usergroup" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>User Group</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=useraccess" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>User Access</p>
+                </a>
+              </li>
+            </ul>
           </li>
           
           <li class="nav-item">
@@ -117,9 +140,15 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=staff" class="nav-link">
+                <a href="index.php?page=staffs" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Staff</p>
+                  <p>Staffs</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=komsel" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Komsel (KeBun)</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -135,15 +164,15 @@
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-image"></i>
               <p>
-                Design
+                Website Master
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?page=design" class="nav-link">
+                <a href="index.php?page=layout" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Design</p>
+                  <p>Layout</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -152,22 +181,34 @@
                   <p>Banners</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="index.php?page=webheader" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Website Header</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=webfooter" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Website Footer</p>
+                </a>
+              </li>
             </ul>
           </li>
 
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-info-circle"></i>
+              <i class="nav-icon far fa-image"></i>
               <p>
-                Information
+                Website Content
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?page=profile" class="nav-link">
+                <a href="index.php?page=homepage" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Profile</p>
+                  <p>Homepage</p>
                 </a>
               </li>
               <li class="nav-item">
@@ -177,93 +218,102 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=minitries" class="nav-link">
+                <a href="index.php?page=pastors" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Our Minitries</p>
+                  <p>Pastors & Staffs</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=custom" class="nav-link">
+                <a href="index.php?page=mission" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Custom</p>
+                  <p>Mission</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=lwg" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>LWG School</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=ppa" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>PPA Hermon Ministry</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=menwomen" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Men/Women Ministry</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=youth" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Youth Ministry</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=children" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Children Church</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=community" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Community</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=online" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Online</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=events" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Events</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=care" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Care</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=give" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Give</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="index.php?page=blogs" class="nav-link">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Blogs</p>
                 </a>
               </li>
             </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="index.php?page=events" class="nav-link">
-              <i class="nav-icon far fa-calendar-alt"></i>
-              <p>
-                Events
-              </p>
-            </a>
           </li>
 
           <li class="nav-item">
             <a href="#" class="nav-link">
               <i class="nav-icon far fa-envelope"></i>
               <p>
-                Care
+                Administration
                 <i class="fas fa-angle-left right"></i>
               </p>
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?page=pastors" class="nav-link">
+                <a href="index.php?page=careform" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
-                  <p>Penyerahan Anak</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=staff" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Baptisan Air</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=jemaat" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pra Nikah</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=jemaat" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Konseling</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=jemaat" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Visitasi</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=jemaat" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Permohonan Doa</p>
+                  <p>Request Form Care</p>
                 </a>
               </li>
             </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="index.php?page=give" class="nav-link">
-              <i class="nav-icon fa fa-money-check"></i>
-              <p>
-                Give
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="index.php?page=blogs" class="nav-link">
-              <i class="nav-icon fas fa-book"></i>
-              <p>
-                Blogs
-              </p>
-            </a>
           </li>
 
           <li class="nav-item">
@@ -347,8 +397,28 @@
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.js"></script>
 <!-- AdminLTE for demo purposes -->
-<script src="dist/js/demo.js"></script>
+<!-- <script src="dist/js/demo.js"></script> -->
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="dist/js/pages/dashboard.js"></script>
+<!-- SweetAlert2 -->
+<script src="plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<script>
+  $( "#logout" ).click(function() {
+    Swal.fire({
+      title: 'Logout',
+      text: "Are you sure want to logout?",
+      icon: 'question',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        window.location.href = 'pages/logout.php';
+      }
+    })
+  });
+</script>
 </body>
 </html>
