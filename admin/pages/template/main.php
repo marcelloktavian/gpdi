@@ -1,3 +1,6 @@
+<?php
+include '../config/koneksi.php'; 
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +30,27 @@
   <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
   <!-- SweetAlert2 -->
   <link rel="stylesheet" href="plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- DataTables -->
+  <link rel="stylesheet" href="plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+  <link rel="stylesheet" href="plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+  
+  <!-- jQuery -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <!-- jQuery UI 1.11.4 -->
+  <script src="plugins/jquery-ui/jquery-ui.min.js"></script>
+  <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+  <!-- DataTables  & Plugins -->
+  <script src="plugins/datatables/jquery.dataTables.min.js"></script>
+  <script src="plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
+  <script src="plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
+  <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+  <script src="plugins/datatables-buttons/js/dataTables.buttons.min.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.bootstrap4.min.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.html5.min.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.print.min.js"></script>
+  <script src="plugins/datatables-buttons/js/buttons.colVis.min.js"></script>
+
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <div class="wrapper">
@@ -48,309 +72,32 @@
   <!-- /.navbar -->
 
   <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="javascript:void(0)" class="brand-link">
-      <img src="../assets/images/gpdi.ico" alt="GPdi Logo" class="brand-image elevation-3" style="opacity: .8">
-      <span class="brand-text font-weight-light">GPdI Bukit Hermon</span>
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="dist/img/user.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="javascript:void(0)" class="d-block"><?=$_SESSION['lgnamauser']?></a>
-        </div>
-      </div>
-
-      <!-- SidebarSearch Form -->
-      <div class="form-inline">
-        <div class="input-group" data-widget="sidebar-search">
-          <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search">
-          <div class="input-group-append">
-            <button class="btn btn-sidebar">
-              <i class="fas fa-search fa-fw"></i>
-            </button>
-          </div>
-        </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-
-          <li class="nav-item">
-            <a href="index.php" class="nav-link">
-              <i class="nav-icon fa fa-home"></i>
-              <p>
-                Dashboard
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fa fa-user"></i>
-              <p>
-              User Management
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="index.php?page=user" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>User</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=usergroup" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>User Group</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=useraccess" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>User Access</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-copy"></i>
-              <p>
-                Master Data
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="index.php?page=pastors" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pastors</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=staffs" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Staffs</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=komsel" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Komsel (KeBun)</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=jemaat" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Jemaat</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Website Master
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="index.php?page=layout" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Layout</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=banners" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Banners</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=webheader" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Website Header</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=webfooter" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Website Footer</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-image"></i>
-              <p>
-                Website Content
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="index.php?page=homepage" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Homepage</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=story" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Story</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=pastors" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Pastors & Staffs</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=mission" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Mission</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=lwg" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>LWG School</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=ppa" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>PPA Hermon Ministry</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=menwomen" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Men/Women Ministry</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=youth" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Youth Ministry</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=children" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Children Church</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=community" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Community</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=online" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Online</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=events" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Events</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=care" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Care</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=give" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Give</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="index.php?page=blogs" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Blogs</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon far fa-envelope"></i>
-              <p>
-                Administration
-                <i class="fas fa-angle-left right"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="index.php?page=careform" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Request Form Care</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-
-          <li class="nav-item">
-            <a href="index.php?page=extension" class="nav-link">
-              <i class="nav-icon fas fa-ellipsis-h"></i>
-              <p>
-                Extension
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="index.php?page=changepass" class="nav-link">
-              <i class="nav-icon fas fa-lock"></i>
-              <p>
-                Change Password
-              </p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a href="javascript:void(0)" class="nav-link" id="logout">
-              <i class="nav-icon fas fa-power-off"></i>
-              <p>
-                Logout
-              </p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+  <?php include "pages/template/sidebar.php"; ?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
+    <?php
+      if(!isset($_GET['p']) || $_GET['p']=='' || $_GET['p']=='home'){
+          // include "pages/homepage/homepage.php";
+        }else if(isset($_GET['p']) && $_GET['p']=='user'){
+          // include "pages/user_management/user.php";
+        }else if(isset($_GET['p']) && $_GET['p']=='usergroup'){
+          // include "pages/user_management/usergroup.php";
+        }else if(isset($_GET['p']) && $_GET['p']=='useraccess'){
+          // include "pages/user_management/useraccess.php";
+        }else if(isset($_GET['p']) && $_GET['p']=='pastors'){
+          // include "pages/master_data/pastors.php";
+        }else if(isset($_GET['p']) && $_GET['p']=='staffs'){
+          // include "pages/master_data/staffs.php";
+        }else if(isset($_GET['p']) && $_GET['p']=='komsel'){
+          include "pages/master_data/komsel.php";
+        }else if(isset($_GET['p']) && $_GET['p']=='jemaat'){
+          // include "pages/master_data/jemaat.php";
+        }
+        else{
+            include "pages/404.php";
+        }
+    ?>
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
@@ -366,11 +113,6 @@
 </div>
 <!-- ./wrapper -->
 
-<!-- jQuery -->
-<script src="plugins/jquery/jquery.min.js"></script>
-<!-- jQuery UI 1.11.4 -->
-<script src="plugins/jquery-ui/jquery-ui.min.js"></script>
-<!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
 <script>
   $.widget.bridge('uibutton', $.ui.button)
 </script>
