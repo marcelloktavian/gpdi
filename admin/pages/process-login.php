@@ -16,8 +16,8 @@ $row = mysqli_fetch_array($result);
 $count = $row['cntUser'];
 
 if($remember == '1'){
-    setcookie('cookie_username', $username, time() + (86400 * 30), "/");
-    setcookie('cookie_remember', $remember, time() + (86400 * 30), "/");
+    setcookie('cookie_username', $username, time() + (3600 * 6), "/");
+    setcookie('cookie_remember', $remember, time() + (3600 * 6), "/");
 }else{
     unset($_COOKIE['cookie_username']); 
     setcookie('cookie_username', null, -1, '/');
