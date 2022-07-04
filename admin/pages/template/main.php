@@ -35,28 +35,7 @@ include '../config/koneksi.php';
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
-    <?php
-      if(!isset($_GET['p']) || $_GET['p']=='' || $_GET['p']=='home'){
-          // include "pages/homepage/homepage.php";
-        }else if(isset($_GET['p']) && $_GET['p']=='user'){
-          // include "pages/user_management/user.php";
-        }else if(isset($_GET['p']) && $_GET['p']=='usergroup'){
-          // include "pages/user_management/usergroup.php";
-        }else if(isset($_GET['p']) && $_GET['p']=='useraccess'){
-          // include "pages/user_management/useraccess.php";
-        }else if(isset($_GET['p']) && $_GET['p']=='pastors'){
-          // include "pages/master_data/pastors.php";
-        }else if(isset($_GET['p']) && $_GET['p']=='staffs'){
-          // include "pages/master_data/staffs.php";
-        }else if(isset($_GET['p']) && $_GET['p']=='komsel'){
-          include "pages/master_data/komsel.php";
-        }else if(isset($_GET['p']) && $_GET['p']=='jemaat'){
-          // include "pages/master_data/jemaat.php";
-        }
-        else{
-            include "pages/404.php";
-        }
-    ?>
+
   </div>
   <!-- /.content-wrapper -->
   <footer class="main-footer">

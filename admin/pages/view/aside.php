@@ -76,7 +76,7 @@
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=community " class="nav-link">
+                <a href="index.php?page=komsel" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Community</p>
                 </a>
