@@ -46,7 +46,7 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLabel">Edit Data User</h4>
+          <h4 class="modal-title" id="exampleModalLabel">Edit Data Pastors</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
@@ -54,16 +54,16 @@
         <form action="controller/conn_edit_pastors.php" method="post" enctype="multipart/form-data">
           <div class="modal-body">
             <div class="form-group">
-              <label for="foto_user">Foto User</label>
+              <label for="foto_user">Foto Pastors</label>
               <input class="form-control" type="file" id="foto_user" name="foto_user">
               <label for="foto_user"><img id="foto_up"
                   style="width: 200px; border: 1px solid black; margin-top: 30px; padding: 10px;"
                   src="image/pastors/0.jpg" alt="your image" /></label>
             </div>
             <div class="form-group row">
-              <label for="nama_pastors" class="col-sm-12 col-form-label">Nama User</label>
+              <label for="nama_pastors" class="col-sm-12 col-form-label">Nama Pastors</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" id="nama_pastors" name="nama_pastors" placeholder="Ketikan Nama Clinet"
+                <input type="text" class="form-control" id="nama_pastors" name="nama_pastors" placeholder="Ketikan Nama Pastors"
                   value="">
               </div>
             </div>
@@ -98,7 +98,7 @@
         <form action="controller/conn_add_pastors.php" method="post" enctype="multipart/form-data">
           <div class="modal-body">
             <div class="form-group">
-              <label for="foto_user2">Foto User</label>
+              <label for="foto_user2">Foto Pastors</label>
               <input class="form-control" type="file" id="foto_user2" name="foto_user2">
               <label for="foto_user2"><img id="foto_up2"
                   style="width: 200px; border: 1px solid black; margin-top: 30px; padding: 10px;"

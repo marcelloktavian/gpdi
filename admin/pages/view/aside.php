@@ -55,7 +55,8 @@
           </li>
           
           <li class="nav-item">
-            <a href="#" class="nav-link">
+            <a href="#" class="nav-link <?php if ($_GET['page']=='pastors' || $_GET['page']=='staff' ||
+              $_GET['page']=='komsel' || $_GET['page']=='jemaat') {echo "active"; } else  {echo "noactive";}?>">
               <i class="nav-icon fas fa-copy"></i>
               <p>
                 Master Data
@@ -64,25 +65,25 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="index.php?page=pastors" class="nav-link">
+                <a href="index.php?page=pastors" class="nav-link <?php if ($_GET['page']=='pastors') {echo "active"; } else  {echo "noactive";}?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Pastors</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=staff" class="nav-link">
+                <a href="index.php?page=staff" class="nav-link <?php if ($_GET['page']=='staff') {echo "active"; } else  {echo "noactive";}?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Staff</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=komsel" class="nav-link">
+                <a href="index.php?page=komsel" class="nav-link <?php if ($_GET['page']=='komsel') {echo "active"; } else  {echo "noactive";}?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Community</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="index.php?page=jemaat" class="nav-link">
+                <a href="index.php?page=jemaat" class="nav-link <?php if ($_GET['page']=='jemaat') {echo "active"; } else  {echo "noactive";}?>">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Jemaat</p>
                 </a>
