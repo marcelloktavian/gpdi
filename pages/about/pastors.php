@@ -37,31 +37,25 @@
                                             <div class="content-wrap about-wrap">
                                             <h3 class="bold-title">Our Pastors</h3>
                                             <div class="gallery-items border-folio-conteainer   vis-por-info two-coulms">
+												<?php 
+													$result_head = mysqli_query($koneksi,"select * from `wb_pastors`
+													where deleted_at is null");
+													while($d_head = mysqli_fetch_array($result_head)){
+												?>
 												<div class="gallery-item houses apartments"  style='margin-right:5%;'>
 													<div class="grid-item-holder">
 														<div class="box-item">
-															<img  src="assets/images/pastors/anthon.png"   alt="">
+															<img  src="admin/image/pastors/<?php echo $d_head['photos_pastors']; ?>"   alt="">
 															<div class="overlay"></div>
-															<a href="assets/images/pastors/anthon.png" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
+															<a href="admin/image/pastors/<?php echo $d_head['photos_pastors']; ?>" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
 														</div>
 														<div class="grid-item">
-															<h3><a href="javascript:void(0)" style='font-size:20px;'>Pdt. Anthon Litha & <br>Pdt. Herjani Yusuf</a></h3>
+															<h3><a href="javascript:void(0)" style='font-size:20px;'><?php echo str_replace("&","&<br>",$d_head['nama_pastors']); ?></a></h3>
 														</div>
 													</div>
 												</div>
-
-												<div class="gallery-item houses interior">
-													<div class="grid-item-holder">
-														<div class="box-item">
-															<img  src="assets/images/pastors/michael.png"   alt="">
-															<div class="overlay"></div>
-															<a href="assets/images/pastors/michael.png" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
-														</div>
-														<div class="grid-item">
-															<h3><a href="javascript:void(0)" style='font-size:20px;'>Pdt. Timotius Michael Litha & <br>Amber Tan Xiaofen</a></h3>
-														</div>
-													</div>
-												</div>
+												<?php } ?>
+												
                                				 </div>
 												
 											</div>
@@ -69,99 +63,25 @@
                                             <h3 class="bold-title"><br>Our Pastoral Staffs</h3>
 												
 											<div class="gallery-items border-folio-conteainer   vis-por-info four-coulms">
+												<?php 
+													$result_head = mysqli_query($koneksi,"select * from `wb_staffs`
+													where deleted_at is null");
+													while($d_head = mysqli_fetch_array($result_head)){
+												?>
 												<div class="gallery-item houses apartments">
 													<div class="grid-item-holder">
 														<div class="box-item">
-															<img  src="assets/images/pastors/serli.png"   alt="">
+															<img  src="admin/image/staffs/<?php echo $d_head['photos_staffs']; ?>"   alt="">
 															<div class="overlay"></div>
-															<a href="assets/images/pastors/serli.png" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
+															<a href="admin/image/staffs/<?php echo $d_head['photos_staffs']; ?>" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
 														</div>
 														<div class="grid-item">
-															<h3><a href="javascript:void(0)">Serli Pasanda</a></h3>
+															<h3><a href="javascript:void(0)"><?php echo $d_head['nama_staffs']; ?></a></h3>
 														</div>
 													</div>
 												</div>
-
-												<div class="gallery-item houses interior">
-													<div class="grid-item-holder">
-														<div class="box-item">
-															<img  src="assets/images/pastors/wim.png"   alt="">
-															<div class="overlay"></div>
-															<a href="assets/images/pastors/wim.png" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
-														</div>
-														<div class="grid-item">
-															<h3><a href="javascript:void(0)">Wim Wambrauw</a></h3>
-														</div>
-													</div>
-												</div>
+												<?php } ?>
 												
-												<div class="gallery-item houses apartments">
-													<div class="grid-item-holder">
-														<div class="box-item">
-															<img  src="assets/images/pastors/arni.png"   alt="">
-															<div class="overlay"></div>
-															<a href="assets/images/pastors/arni.png" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
-														</div>
-														<div class="grid-item">
-															<h3><a href="javascript:void(0)">Arniatwati Zai</a></h3>
-														</div>
-													</div>
-												</div>
-
-												<div class="gallery-item houses apartments">
-													<div class="grid-item-holder">
-														<div class="box-item">
-															<img  src="assets/images/pastors/ephsy.png"   alt="">
-															<div class="overlay"></div>
-															<a href="assets/images/pastors/ephsy.png" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
-														</div>
-														<div class="grid-item">
-															<h3><a href="javascript:void(0)">Epsi Erwandy</a></h3>
-														</div>
-													</div>
-												</div>
-                               				 </div>
-												
-												<div class="gallery-items border-folio-conteainer   vis-por-info four-coulms">
-
-												<div class="gallery-item houses interior">
-													<div class="grid-item-holder">
-														<div class="box-item">
-															<img  src="assets/images/pastors/edison.jpg"   alt="">
-															<div class="overlay"></div>
-															<a href="assets/images/pastors/edison.jpg" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
-														</div>
-														<div class="grid-item">
-															<h3><a href="javascript:void(0)">Edison Kanggunum</a></h3>
-														</div>
-													</div>
-												</div>
-												
-												<div class="gallery-item houses apartments">
-													<div class="grid-item-holder">
-														<div class="box-item">
-															<img  src="assets/images/pastors/ida.png"   alt="">
-															<div class="overlay"></div>
-															<a href="assets/images/pastors/ida.png" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
-														</div>
-														<div class="grid-item">
-															<h3><a href="javascript:void(0)">Kristian Idayanti Gulo</a></h3>
-														</div>
-													</div>
-												</div>
-
-												<div class="gallery-item houses interior">
-													<div class="grid-item-holder">
-														<div class="box-item">
-															<img  src="assets/images/pastors/teo.png"   alt="">
-															<div class="overlay"></div>
-															<a href="assets/images/pastors/teo.png" class="image-popup popup-image"><i class="fa fa-search"  ></i></a>
-														</div>
-														<div class="grid-item">
-															<h3><a href="javascript:void(0)">Theofilus Tamba</a></h3>
-														</div>
-													</div>
-												</div>
                                				 </div>
 												
                                         </div>
