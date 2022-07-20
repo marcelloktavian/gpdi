@@ -5,9 +5,11 @@ if(isset($_SESSION['lgusername']) && $_SESSION["lgusername"] !== ''){
     //include "pages/template/main.php";
     if(!isset($_GET['page']) || $_GET['page']=='' || $_GET['page']=='main'){
         include "pages/template/main.php";
-    }else if(isset($_GET['page']) && $_GET['page']=='pastors'){
+      }else if(isset($_GET['page']) && $_GET['page']=='pastors'){
         include "pages/master_data/pastors.php";
-    }else if(isset($_GET['page']) && $_GET['page']=='user'){
+      }else if(isset($_GET['page']) && $_GET['page']=='jemaat'){
+        include "pages/master_data/jemaat.php";
+      }else if(isset($_GET['page']) && $_GET['page']=='user'){
         include "pages/user_management/user.php";
       }else if(isset($_GET['page']) && $_GET['page']=='usergroup'){
         include "pages/user_management/usergroup.php";

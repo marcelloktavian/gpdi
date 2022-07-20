@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Komsel | GPdI Bukit Hermon</title>
+  <title>Jemaat | GPdI Bukit Hermon</title>
 
   <?php include 'pages/view/global_head.php'; ?>
 </head>
@@ -12,7 +12,7 @@
 <body class="hold-transition sidebar-mini layout-fixed">
 
 
-  <div class="modal fade" id="modal-delete-komsel">
+  <div class="modal fade" id="modal-delete-jemaat">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
@@ -22,12 +22,12 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Apakah anda yakin menghapus komsel ini ?<br>
-            Nama komsel &nbsp; : <b id="nama_komsel_delete"></b><br>
+          <p>Apakah anda yakin menghapus jemaat ini ?<br>
+            Nama jemaat &nbsp; : <b id="nama_jemaat_delete"></b><br>
         </div>
-        <form action="controller/conn_delete_komsel.php" method="post">
+        <form action="controller/conn_delete_jemaat.php" method="post">
           <input type="hidden" name="id_user" value="<?=$_SESSION['lgid_user']?>">
-          <input type="hidden" name="id_komsel_delete" id="id_komsel_delete" value="">
+          <input type="hidden" name="id_jemaat_delete" id="id_jemaat_delete" value="">
 
           <div class="modal-footer">
             <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
@@ -42,53 +42,53 @@
   <!-- /.modal -->
 
 
-  <div class="modal fade" id="modal-edit-komsel">
+  <div class="modal fade" id="modal-edit-jemaat">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLabel">Edit Data komsel</h4>
+          <h4 class="modal-title" id="exampleModalLabel">Edit Data jemaat</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="controller/conn_edit_komsel.php" method="post" enctype="multipart/form-data">
+        <form action="controller/conn_edit_jemaat.php" method="post" enctype="multipart/form-data">
           <div class="modal-body">
 
             <div class="form-group row">
-              <label for="nama_edit_komsel" class="col-sm-12 col-form-label">Nama komsel</label>
+              <label for="nama_edit_jemaat" class="col-sm-12 col-form-label">Nama jemaat</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" id="nama_edit_komsel" name="nama_edit_komsel"
-                  placeholder="Ketikan Nama komsel" value="">
+                <input type="text" class="form-control" id="nama_edit_jemaat" name="nama_edit_jemaat"
+                  placeholder="Ketikan Nama jemaat" value="">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="nama_edit_pks" class="col-sm-12 col-form-label">Nama PKS</label>
+              <label for="nama_edit_jemaat" class="col-sm-12 col-form-label">Nama jemaat</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" id="nama_edit_pks" name="nama_edit_pks"
-                  placeholder="Ketikan Nama komsel" value="">
+                <input type="text" class="form-control" id="nama_edit_jemaat" name="nama_edit_jemaat"
+                  placeholder="Ketikan Nama jemaat" value="">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="nama_edit_hp_pks" class="col-sm-12 col-form-label">No Telp PKS</label>
+              <label for="nama_edit_hp_jemaat" class="col-sm-12 col-form-label">No Telp jemaat</label>
               <div class="col-sm-12">
-                <input type="text" required class="form-control" id="nama_edit_hp_pks" name="nama_edit_hp_pks"
-                  placeholder="No Telp PKS" value="" data-inputmask='"mask": "9999999999999"' data-mask>
+                <input type="text" required class="form-control" id="nama_edit_hp_jemaat" name="nama_edit_hp_jemaat"
+                  placeholder="No Telp jemaat" value="" data-inputmask='"mask": "9999999999999"' data-mask>
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="nama_edit_wilayah" class="col-sm-12 col-form-label">Wilayah</label>
+              <label for="nama_edit_alamat" class="col-sm-12 col-form-label">alamat</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" id="nama_edit_wilayah" name="nama_edit_wilayah"
-                  placeholder="Ketikan Nama komsel" value="">
+                <input type="text" class="form-control" id="nama_edit_alamat" name="nama_edit_alamat"
+                  placeholder="Ketikan Nama jemaat" value="">
               </div>
             </div>
 
 
             <input type="hidden" name="id_user" value="<?=$_SESSION['lgid_user']?>">
-            <input type="hidden" name="id_komsel_edit" id="id_komsel_edit" value="">
+            <input type="hidden" name="id_jemaat_edit" id="id_jemaat_edit" value="">
             <input type="hidden" class="form-group" id="fotoLama" name="fotoLama">
 
           </div>
@@ -108,43 +108,43 @@
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
-          <h4 class="modal-title" id="exampleModalLabel2">Tambahkan Data komsel</h4>
+          <h4 class="modal-title" id="exampleModalLabel2">Tambahkan Data jemaat</h4>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
-        <form action="controller/conn_add_komsel.php" method="post" enctype="multipart/form-data">
+        <form action="controller/conn_add_jemaat.php" method="post" enctype="multipart/form-data">
           <div class="modal-body">
 
             <div class="form-group row">
-              <label for="nama_add_komsel" class="col-sm-12 col-form-label">Nama komsel</label>
+              <label for="nama_add_tittle" class="col-sm-12 col-form-label">Nama Tittle</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" id="nama_add_komsel" name="nama_add_komsel"
-                  placeholder="Ketikan Nama komsel" value="">
+                <input type="text" class="form-control" id="nama_add_tittle" name="nama_add_tittle"
+                  placeholder="Ketikan Nama jemaat" value="">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="nama_add_pks" class="col-sm-12 col-form-label">Nama PKS</label>
+              <label for="nama_add_jemaat" class="col-sm-12 col-form-label">Nama jemaat</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" id="nama_add_pks" name="nama_add_pks"
-                  placeholder="Ketikan Nama komsel" value="">
+                <input type="text" class="form-control" id="nama_add_jemaat" name="nama_add_jemaat"
+                  placeholder="Ketikan Nama jemaat" value="">
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="nama_add_no_pks" class="col-sm-12 col-form-label">No Telp PKS</label>
+              <label for="nama_add_no_jemaat" class="col-sm-12 col-form-label">No Telp jemaat</label>
               <div class="col-sm-12">
-                <input type="text" required class="form-control" id="nama_add_no_pks" name="nama_add_no_pks"
-                  placeholder="No Telp PKS" value="" data-inputmask='"mask": "9999999999999"' data-mask>
+                <input type="text" required class="form-control" id="nama_add_no_jemaat" name="nama_add_no_jemaat"
+                  placeholder="No Telp jemaat" value="" data-inputmask='"mask": "9999999999999"' data-mask>
               </div>
             </div>
 
             <div class="form-group row">
-              <label for="nama_add_wilayah" class="col-sm-12 col-form-label">Wilayah</label>
+              <label for="nama_add_alamat" class="col-sm-12 col-form-label">alamat</label>
               <div class="col-sm-12">
-                <input type="text" class="form-control" id="nama_add_wilayah" name="nama_add_wilayah"
-                  placeholder="Ketikan Nama komsel" value="">
+                <input type="text" class="form-control" id="nama_add_alamat" name="nama_add_alamat"
+                  placeholder="Ketikan Nama jemaat" value="">
               </div>
             </div>
 
@@ -191,7 +191,7 @@
         <div class="container-fluid">
           <div class="row mb-2">
             <div class="col-sm-6">
-              <h1 class="m-0">Our komsel
+              <h1 class="m-0">Our jemaat
               </h1>
             </div><!-- /.col -->
             <div class="col-sm-6">
@@ -225,7 +225,7 @@
                     <button class="btn btn-success float-sm-right" data-toggle="modal" data-target="#modal-add"
                       data-backdrop="static" data-keyboard="false"
                       style="right: 0px; width: 150px; margin-top: 10px; margin-right: 20px;">
-                      + Add komsel
+                      + Add jemaat
                     </button>
                   </div>
                 </div>
@@ -235,37 +235,37 @@
                   <table id="example1" class="table table-bordered table-striped">
                     <thead>
                       <tr>
-                        <th>Nama komsel</th>
-                        <th>PKS</th>
-                        <th>No HP PKS</th>
-                        <th>Wilayah</th>
+                        <th>Nama Tittle</th>
+                        <th>Nama Jemaat</th>
+                        <th>No HP jemaat</th>
+                        <th>Alamat</th>
                         <th>Actions</th>
                       </tr>
                     </thead>
                     <tbody>
                       <?php 
-                        $result_head = mysqli_query($koneksi,"select * from `wb_komsel`
+                        $result_head = mysqli_query($koneksi,"select * from `wb_jemaat`
                         where deleted_at is null");
                         while($d_head = mysqli_fetch_array($result_head)){
                         ?>
                       <tr>
-                        <td><?php echo $d_head['nama_komsel']; ?></td>
-                        <td><?php echo $d_head['pks']; ?></td>
-                        <td><?php echo $d_head['hp_pks']; ?></td>
-                        <td><?php echo $d_head['wilayah']; ?></td>
+                        <td><?php echo $d_head['tittle']; ?></td>
+                        <td><?php echo $d_head['nama_jemaat']; ?></td>
+                        <td><?php echo $d_head['hp_jemaat']; ?></td>
+                        <td><?php echo $d_head['alamat']; ?></td>
                         <td style="text-align: center;">
                           <button class="btn btn-info btn-sm" name="id_ev" style="margin-right: 15px;"
-                            data-a="<?php echo $d_head['id_komsel']; ?>" data-b="<?php echo $d_head['nama_komsel']; ?>"
-                            data-c="<?php echo $d_head['pks']; ?>" data-d="<?php echo $d_head['hp_pks']; ?>"
-                            data-e="<?php echo $d_head['wilayah']; ?>" data-toggle="modal"
-                            data-target="#modal-edit-komsel" data-backdrop="static" data-keyboard="false">
+                            data-a="<?php echo $d_head['id_jemaat']; ?>" data-b="<?php echo $d_head['nama_jemaat']; ?>"
+                            data-c="<?php echo $d_head['jemaat']; ?>" data-d="<?php echo $d_head['hp_jemaat']; ?>"
+                            data-e="<?php echo $d_head['alamat']; ?>" data-toggle="modal"
+                            data-target="#modal-edit-jemaat" data-backdrop="static" data-keyboard="false">
                             <i class="fas fa-pencil-alt">
                             </i>
                             Edit
                           </button>
                           <button class="btn btn-danger btn-sm" data-backdrop="static" data-keyboard="false"
-                            data-c="<?php echo $d_head['id_komsel']; ?>" data-v="<?php echo $d_head['nama_komsel']; ?>"
-                            data-toggle="modal" data-target="#modal-delete-komsel">
+                            data-c="<?php echo $d_head['id_jemaat']; ?>" data-v="<?php echo $d_head['nama_jemaat']; ?>"
+                            data-toggle="modal" data-target="#modal-delete-jemaat">
                             <i class="fas fa-trash">
                             </i>
                             Delete
@@ -320,7 +320,7 @@
 
 
 
-    $('#modal-delete-komsel').on('show.bs.modal', function (event) {
+    $('#modal-delete-jemaat').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget); // Button that triggered the modal
       var recipient_c = button.data('c');
 
@@ -329,16 +329,16 @@
       // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
       // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
       var modal = $(this);
-      modal.find('.id_komsel_delete').val(recipient_c);
-      document.getElementById("id_komsel_delete").value = recipient_c;
+      modal.find('.id_jemaat_delete').val(recipient_c);
+      document.getElementById("id_jemaat_delete").value = recipient_c;
 
 
-      document.getElementById("nama_komsel_delete").innerHTML = recipient_v;
+      document.getElementById("nama_jemaat_delete").innerHTML = recipient_v;
     })
 
 
 
-    $('#modal-edit-komsel').on('show.bs.modal', function (event) {
+    $('#modal-edit-jemaat').on('show.bs.modal', function (event) {
       var button = $(event.relatedTarget); // Button that triggered the modal
       var recipient_a = button.data('a');
       var recipient_b = button.data('b');
@@ -348,20 +348,20 @@
 
       // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
       var modal = $(this);
-      modal.find('.id_komsel_edit').val(recipient_a);
-      document.getElementById("id_komsel_edit").value = recipient_a;
+      modal.find('.id_jemaat_edit').val(recipient_a);
+      document.getElementById("id_jemaat_edit").value = recipient_a;
 
-      modal.find('.nama_edit_komsel').val(recipient_b);
-      document.getElementById("nama_edit_komsel").value = recipient_b;
+      modal.find('.nama_edit_jemaat').val(recipient_b);
+      document.getElementById("nama_edit_jemaat").value = recipient_b;
 
-      modal.find('.nama_edit_pks').val(recipient_c);
-      document.getElementById("nama_edit_pks").value = recipient_c;
+      modal.find('.nama_edit_jemaat').val(recipient_c);
+      document.getElementById("nama_edit_jemaat").value = recipient_c;
 
-      modal.find('.nama_edit_hp_pks').val(recipient_d);
-      document.getElementById("nama_edit_hp_pks").value = recipient_d;
+      modal.find('.nama_edit_hp_jemaat').val(recipient_d);
+      document.getElementById("nama_edit_hp_jemaat").value = recipient_d;
 
-      modal.find('.nama_edit_wilayah').val(recipient_e);
-      document.getElementById("nama_edit_wilayah").value = recipient_e;
+      modal.find('.nama_edit_alamat').val(recipient_e);
+      document.getElementById("nama_edit_alamat").value = recipient_e;
 
     })
 
